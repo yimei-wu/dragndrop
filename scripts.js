@@ -9,11 +9,11 @@ const images = Array.from(document.querySelectorAll(".image"));
  - add an event listener that REMOVES the .dragging class when the drag ENDS 
 */
 images.forEach((image) => {
-  image.addEventListener("dragstart", () => {
+  image.addEventListener("dragstart", (e) => {
     image.classList.add("dragging");
   });
 
-  image.addEventListener("dragend", () => {
+  image.addEventListener("dragend", (e) => {
     image.classList.remove("dragging");
   });
 });
@@ -26,10 +26,12 @@ holes.forEach((hole) => {
   */
 
   hole.addEventListener("dragover", (e) => {
+    e.preventDefault();
     hole.classList.add("hovered");
   });
 
-  hole.addEventListener("dragleave", () => {
+  hole.addEventListener("dragleave", (e) => {
+    e.preventDefault();
     hole.classList.remove("hovered");
   });
 
@@ -37,11 +39,11 @@ holes.forEach((hole) => {
   - add an event listener for when a dragging element is dropped on it:
   */
   hole.addEventListener("drop", (e) => {
+    e.preventDefault();
     // get the ID of the image that is being dragging
     const draggedImageId = document.querySelector(".dragging").id;
     // get the ALLOWED ID from the attribute of the hole where i am hovering on
     const acceptedPieceId = e.target.getAttribute("accepted-piece-id");
-
     // compare the two ids
     if (draggedImageId === acceptedPieceId) {
       // if they are the same, it means that the dragging piece has the id that is allowed in the hole
@@ -56,8 +58,9 @@ holes.forEach((hole) => {
       pieceToShow.classList.add("dropped");
       // remove the .dragged piece from the left sidebar
       document.getElementById(draggedImageId).style.display = "none";
-      // remove the .hovered class from the hole
-      hole.classList.remove("hovered");
     }
+
+    // remove the .hovered class from the hole
+    hole.classList.remove("hovered");
   });
 });
