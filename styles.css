@@ -151,5 +151,5 @@ body {
 }
 
 .hovered {
-  background-color: aliceblue;
+  opacity: 0.5;
 }
