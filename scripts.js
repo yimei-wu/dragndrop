@@ -1,29 +1,15 @@
 const stones = document.querySelectorAll(".stone"),
-  images = document.querySelectorAll(".image");
+  images = Array.from(document.querySelectorAll(".image"));
 
-const pieces = document.querySelectorAll(".box-stone");
-
-pieces.forEach((piece) => {
-  piece.addEventListener("drag", (event) => {
-    // console.log("dragging", event.target);
-  });
-
-  piece.addEventListener("drop", (event) => {
-    console.log("drop", event.target);
+images.forEach((image) => {
+  image.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/plain", image.id);
   });
 });
-/* 
+
 stones.forEach((stone) => {
-  stone.addEventListener("drop", (e) => {
-    e.preventDefault();
-    console.log(e);
-  });
-});
- */
-/* stones.forEach((stone) => {
   stone.addEventListener("dragover", (e) => {
     e.preventDefault();
-    console.log(e);
     stone.classList.add("hovered");
   });
 
@@ -31,8 +17,11 @@ stones.forEach((stone) => {
     stone.classList.remove("hovered");
   });
 
-  stone.addEventListener("drop", () => {
-    // stone.appendChild(image);
+  stone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const draggedId = e.dataTransfer.getData("text/plain");
+    const draggedImage = images.find((image) => image.id === draggedId);
+    stone.appendChild(draggedImage).removeChild(stone);
+    stone.classList.remove("hovered");
   });
 });
- */
