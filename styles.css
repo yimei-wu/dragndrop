@@ -1,117 +1,155 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container {
-    background-color: black;
-    background: url("./Bridge.jpg") center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(60, 1fr);
-    grid-template-rows: repeat(50, 2vh);
-    position: relative;
+  background-color: black;
+  background: url("./Bridge.jpg") center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(60, 1fr);
+  grid-template-rows: repeat(50, 2vh);
+  position: relative;
 }
 .side-bar {
-    grid-column-start: 1;
-    grid-column-end: 14;
-    grid-row-start: 1;
-    grid-row-end: -1;
-    background-color: #000000c0;
-    box-shadow: 10px 0px 14px #000;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+  grid-column-start: 1;
+  grid-column-end: 14;
+  grid-row-start: 1;
+  grid-row-end: -1;
+  background-color: #000000c0;
+  box-shadow: 10px 0px 14px #000;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
 }
 .side-bar .box1 {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .side-bar .box2 {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .side-bar .box3 {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 .image {
-    z-index: 100;
+  z-index: 100;
 }
 .box1 .image {
-    background: url("./stone-1.png") center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 90%;
-    width: 90%;
-    margin-left: 5%;
+  background: url("./stone-1.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90%;
+  width: 90%;
+  margin-left: 5%;
 }
 .box2 .image {
-    background: url("./stone-2.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 80%;
-    width: 80%;
-    margin-left: 10%;
+  background: url("./stone-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
 }
+
 .box3 .image {
-    background: url("./stone-3.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 80%;
-    width: 80%;
-    margin-left: 10%;
+  background: url("./stone-3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
 }
-.container .stone {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.container .hole {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- */
+.piece-1.image.hidden,
+.piece-2.image.hidden,
+.piece-3.image.hidden {
+  display: none;
+}
+.piece-1.image.dropped {
+  grid-column-start: 18;
+  grid-column-end: 29;
+  grid-row-start: 14;
+  grid-row-end: 31;
+  background: url("./stone-1.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .stone1 {
-    grid-column-start: 18;
-    grid-column-end: 29;
-    grid-row-start: 14;
-    grid-row-end: 31;
-    background: url("./empty-stone-1.png") center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  grid-column-start: 18;
+  grid-column-end: 29;
+  grid-row-start: 14;
+  grid-row-end: 31;
+  background: url("./empty-stone-1.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
 .stone2 {
-    grid-column-start: 29;
-    grid-column-end: 39;
-    grid-row-start: 28;
-    grid-row-end: 40;
-    background: url("./empty-stone-2.png") center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  grid-column-start: 29;
+  grid-column-end: 39;
+  grid-row-start: 28;
+  grid-row-end: 40;
+  background: url("./empty-stone-2.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+.piece-2.image.dropped {
+  grid-column-start: 29;
+  grid-column-end: 39;
+  grid-row-start: 28;
+  grid-row-end: 40;
+  background: url("./stone-2.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* --- */
+
 .stone3 {
-    grid-column-start: 43;
-    grid-column-end: 53;
-    grid-row-start: 4;
-    grid-row-end: 16;
-    background: url("./empty-stone-3.png") center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  grid-column-start: 43;
+  grid-column-end: 53;
+  grid-row-start: 4;
+  grid-row-end: 16;
+  background: url("./empty-stone-3.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.piece-3.image.dropped {
+  grid-column-start: 43;
+  grid-column-end: 53;
+  grid-row-start: 4;
+  grid-row-end: 16;
+
+  background: url("./stone-3.png") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .hovered {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }

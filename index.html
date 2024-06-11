@@ -8,9 +8,6 @@
   </head>
   <body>
     <div class="container">
-      <div class="stone stone1"></div>
-      <div class="stone stone2"></div>
-      <div class="stone stone3"></div>
       <div class="side-bar">
         <div class="box-stone box1">
           <div id="piece-1" class="image" draggable="true"></div>
@@ -22,6 +19,15 @@
           <div id="piece-3" class="image" draggable="true"></div>
         </div>
       </div>
+
+      <div class="hole stone1" accepted-piece-id="piece-1"></div>
+      <div id="dropped-piece-1" class="piece-1 image hidden"></div>
+
+      <div class="hole stone2" accepted-piece-id="piece-2"></div>
+      <div id="dropped-piece-2" class="piece-2 image hidden"></div>
+
+      <div class="hole stone3" accepted-piece-id="piece-3"></div>
+      <div id="dropped-piece-3" class="piece-3 image hidden"></div>
     </div>
 
     <script src="scripts.js"></script>
