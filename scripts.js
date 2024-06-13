@@ -2,6 +2,7 @@
 const holes = document.querySelectorAll(".hole");
 // get all the pieces html nodes
 const images = Array.from(document.querySelectorAll(".image"));
+let winCount = 0;
 
 /* 
  for each piece:
@@ -44,6 +45,7 @@ holes.forEach((hole) => {
     const draggedImageId = document.querySelector(".dragging").id;
     // get the ALLOWED ID from the attribute of the hole where i am hovering on
     const acceptedPieceId = e.target.getAttribute("accepted-piece-id");
+
     // compare the two ids
     if (draggedImageId === acceptedPieceId) {
       // if they are the same, it means that the dragging piece has the id that is allowed in the hole
@@ -58,6 +60,15 @@ holes.forEach((hole) => {
       pieceToShow.classList.add("dropped");
       // remove the .dragged piece from the left sidebar
       document.getElementById(draggedImageId).style.display = "none";
+
+      winCount++;
+
+      console.log(winCount);
+
+      if (winCount === 3) {
+        const popUp = document.getElementById("pop");
+        popUp.style.display = "flex";
+      }
     }
 
     // remove the .hovered class from the hole

@@ -153,3 +153,41 @@ body {
 .hovered {
   opacity: 0.5;
 }
+
+.pop-up {
+  height: 65vh;
+  width: 60vw;
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%); */
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 200;
+}
+.pop-up p {
+  font-size: 1.7rem;
+  width: 40vw;
+}
+.pop-up button {
+  padding: 0.5rem 1.5rem;
+  background-color: #343434;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 1.7rem;
+  margin-top: 3.5rem;
+}
+.pop-up button:hover {
+  background-color: #535353;
+  /* box-shadow: inset 0px 0px 6px 0px #ffffffd7;   */
+}
+
+#pop {
+  display: none;
+}
