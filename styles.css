@@ -18,13 +18,13 @@ body {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: repeat(60, 1fr);
-  grid-template-rows: repeat(50, 2vh);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 10vh);
   position: relative;
 }
 .side-bar {
   grid-column-start: 1;
-  grid-column-end: 14;
+  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: -1;
   background-color: #000000c0;
@@ -51,8 +51,11 @@ body {
   grid-row-start: 3;
   grid-row-end: 4;
 }
-.image {
-  z-index: 100;
+.box-stone {
+  cursor: grab;
+}
+.box-stone:active {
+  cursor: grabbing;
 }
 .box1 .image {
   background: url("./stone-1.png") center center;
@@ -91,39 +94,39 @@ body {
 .piece-3.image.hidden {
   display: none;
 }
-.piece-1.image.dropped {
-  grid-column-start: 18;
-  grid-column-end: 29;
-  grid-row-start: 14;
-  grid-row-end: 31;
-  background: url("./stone-1.png") center center;
+.stone1 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 7;
+  background: url("./empty-stone-1.png") center center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-.stone1 {
-  grid-column-start: 18;
-  grid-column-end: 29;
-  grid-row-start: 14;
-  grid-row-end: 31;
-  background: url("./empty-stone-1.png") center center;
+.piece-1.image.dropped {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 7;
+  background: url("./stone-1.png") center center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .stone2 {
-  grid-column-start: 29;
-  grid-column-end: 39;
-  grid-row-start: 28;
-  grid-row-end: 40;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 9;
   background: url("./empty-stone-2.png") center center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 .piece-2.image.dropped {
-  grid-column-start: 29;
-  grid-column-end: 39;
-  grid-row-start: 28;
-  grid-row-end: 40;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 9;
   background: url("./stone-2.png") center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -131,27 +134,26 @@ body {
 /* --- */
 
 .stone3 {
-  grid-column-start: 43;
-  grid-column-end: 53;
-  grid-row-start: 4;
-  grid-row-end: 16;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
   background: url("./empty-stone-3.png") center center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 .piece-3.image.dropped {
-  grid-column-start: 43;
-  grid-column-end: 53;
-  grid-row-start: 4;
-  grid-row-end: 16;
-
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
   background: url("./stone-3.png") center center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .hovered {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .pop-up {
