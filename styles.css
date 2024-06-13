@@ -73,7 +73,6 @@ body {
   width: 80%;
   margin-left: 10%;
 }
-
 .box3 .image {
   background: url("./stone-3.png");
   background-size: contain;
@@ -81,6 +80,9 @@ body {
   height: 80%;
   width: 80%;
   margin-left: 10%;
+}
+.image {
+  z-index: 100;
 }
 .container .hole {
   position: absolute;
