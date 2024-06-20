@@ -3,7 +3,7 @@ const holes = document.querySelectorAll(".hole");
 // get all the pieces html nodes
 const images = Array.from(document.querySelectorAll(".image"));
 let winCount = 0;
-
+const next = document.getElementById("next");
 /* 
  for each piece:
  - add an event listener that ADDS the .dragging class when the drag STARTS
